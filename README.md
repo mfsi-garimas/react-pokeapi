@@ -30,6 +30,6 @@ All data is fetched from the public and well-documented PokéAPI.
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/interactive-react-dashboard.git
-cd interactive-react-dashboard
+git clone https://mfsi_garimas@bitbucket.org/mindfire1011/react-typescript.git
+cd react-app
 npm install
