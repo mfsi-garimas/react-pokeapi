@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #1e40af;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li {
+    display: inline;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    background-color: #1e40af;
+    color: white;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+/* HomePage Styles */
+.search-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#search {
+    width: 200px;
+    padding: 8px;
+}
+
+#filter-btn {
+    padding: 8px 16px;
+    background-color: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pokemon-card {
+    background-color: white;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+.pokemon-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-4px);
+}
+
+.pokemon-placeholder {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 0.5rem;
+  background: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #aaa;
+}
+
+.view-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.detail-header img {
+    height:120px
+}
+
+#add-favorite {
+  color: black;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(240, 101, 149, 0.3);
+}
+#add-favorite.active {
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+}
+#add-favorite:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(240, 101, 149, 0.4);
+}
+
+#add-favorite:active {
+  transform: scale(0.96);
+}
+
+#add-favorite:focus {
+  outline: 2px solid #f06595;
+  outline-offset: 3px;
+}
+
+.pokemon-stats {
+    margin-bottom: 30px;
+}
+
+.comment-box {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: system-ui, sans-serif;
+}
+
+.comment-box h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#comment-input {
+  width: 100%;
+  min-height: 70px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  resize: vertical;
+  margin-bottom: 0.8rem;
+  transition: border-color 0.2s;
+}
+
+#comment-input:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+#comment-submit {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+#comment-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+}
+
+#comment-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.2rem;
+}
+
+.comment-item {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.comment-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #111;
+  margin-bottom: 0.3rem;
+}
+
+.comment-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* General layout for the About section */
+.about {
+    background-color: #f4f4f9; /* Light background for the section */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Container for the content */
+.about-container {
+    text-align: center;
+}
+
+/* Title styles */
+.about-title {
+    font-size: 2.5rem;
+    color: #ffcb05; /* Pokémon Yellow */
+    font-family: 'Pokemon', sans-serif; /* Custom Pokémon font */
+    margin-bottom: 20px;
+}
+
+/* Description styles */
+.about-description {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Sub-header styles */
+.api-header, .features-header {
+    font-size: 1.5rem;
+    color: #d62828; /* Pokémon Red */
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Pokemon', sans-serif;
+}
+
+/* Feature list */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.feature-item {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.feature-item svg {
+    margin-right: 10px;
+}
+
+/* Add a little more spacing to make the page look less crowded */
+.about p, .about ul {
+    margin-bottom: 15px;
+}
+
+/* Button style for user interaction (optional) */
+button {
+    background-color: #ffcb05;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d62828; /* Hover to Pokémon Red */
+    color: white;
+}
+
+/* Dashboard Container */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(201px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+/* Stat Cards */
+.stat-card {
+    background-color: #ffcb05;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 {
+    font-size: 1.5rem;
+    font-family: 'Pokemon', sans-serif;
+    color: #d62828; /* Pokémon Red */
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Charts Section */
+.charts {
+    padding: 40px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.charts h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #ffcb05;
+    font-family: 'Pokemon', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Chart Cards */
+.chart-card {
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.chart-card h3 {
+    font-size: 1.5rem;
+    color: #d62828;
+    font-family: 'Pokemon', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+}
