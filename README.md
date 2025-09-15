@@ -30,6 +30,6 @@ All data is fetched from the public and well-documented PokéAPI.
 ### Installation
 
 ```bash
-git clone https://mfsi_garimas@bitbucket.org/mindfire1011/react-typescript.git
+git clone https://github.com/mfsi-garimas/react-pokeapi.git
 cd react-app
 npm install
