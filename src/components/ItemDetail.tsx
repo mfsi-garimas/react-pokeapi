@@ -52,16 +52,16 @@ export default function ItemDetail() {
             setFav(fav.filter(id => id !== pokemonId));
             toast.error(`${pokemonData.name} Removed as Favourite`);
         } else {
-            if (pokemonId !== null && fav.length > 0) {
+            if (pokemonId !== null) {
                 setFav([...fav, pokemonId]);
                 toast.success(`${pokemonData.name} Added as Favourite`);
             }
         }
     }   
     
-    function handleComments(formData) {
+    function handleComments(formData: FormData) {
         const comment = formData.get("comment")
-        if(pokemonId != null) {
+        if(pokemonId != null && comment && typeof comment === "string") {
             const newComment: CommentData = {
                 pokemonId: pokemonId,
                 comment: comment,
@@ -84,8 +84,13 @@ export default function ItemDetail() {
    
     if(loading) {
         return <p>Loading Pokémon…</p>;
-    }    
-    
+    }
+
+    function getStatValue(statName: string): number | string {
+        const stat = pokemonData.stats.find((s: { stat: { name: string } }) => s.stat.name === statName);
+        return stat ? stat.base_stat : "N/A";
+    }
+
     return (
         <main>
         <section className="pokemon-detail">
@@ -95,19 +100,20 @@ export default function ItemDetail() {
                 <img src={pokemonData.sprites.back_default} alt={pokemonData.name} />
             </div>
 
-            <div className="pokemon-description">
+            {/* <div className="pokemon-description">
                 <h3>Description</h3>
                 <p>Bulbasaur is a dual-type Grass/Poison Pokémon. It evolves into Ivysaur starting at level 16.</p>
-            </div>
+            </div> */}
 
             <div className="pokemon-stats">
                 <h3>Stats</h3>
                 <ul>
-                    <li><strong>Type:</strong>{pokemonData.types.map(t => t.type.name).join(", ")}</li>
-                    <li><strong>HP:</strong> 45</li>
-                    <li><strong>Attack:</strong> 49</li>
-                    <li><strong>Defense:</strong> 49</li>
-                    <li><strong>Speed:</strong> 45</li>
+                    <li><strong>Type:</strong>{pokemonData.types.map((t: { type: { name: string } }) => t.type.name).join(", ")}</li>
+                    <li><strong>HP:</strong> {getStatValue("hp")}</li>
+                    <li><strong>Attack:</strong> {getStatValue("attack")}</li>
+                    <li><strong>Defense:</strong> {getStatValue("defense")}</li>
+                    <li><strong>Speed:</strong> {getStatValue("speed")}</li>
+                    <li><strong>Weight:</strong> {pokemonData.weight}</li>
                 </ul>
             </div>
 
