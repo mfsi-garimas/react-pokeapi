@@ -3,7 +3,7 @@ import { getAllPokemonTypes } from "../api/getAllPokemonTypes";
 import { useEffect, useState } from "react";
 import { getAllPokemonAbility } from "../api/getAllPokemonAbility";
 import Top5PokemonChart from "./Top5PokemonChart";
-import { GetAllPokemonResponse, Pokemon } from "../types/pokemon";
+import { GetAllPokemonResponse } from "../types/pokemon";
 
 export default function Dashboard() {
     const [allPokemon, setAllPokemon] = useState<number>(0)
