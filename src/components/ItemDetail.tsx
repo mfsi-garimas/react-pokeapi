@@ -12,7 +12,6 @@ export default function ItemDetail() {
     const [loading, setLoading] = useState<boolean>(true);
     const [comments, setComments] = useState<CommentData[]>([]);
     const [fav, setFav] = useState<number[]>([]);
-    let commentsData =[]
     useEffect(()=>{
         const getPokemonData = async () => {
             try {

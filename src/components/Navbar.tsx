@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-
-export default function Navbar(props) {
+interface NavbarProps {
+  userAnonymousName: string;
+}
+export default function Navbar(props:NavbarProps) {
     return (
         <header>
         <div className="navbar">
